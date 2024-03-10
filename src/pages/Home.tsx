@@ -1,21 +1,22 @@
 import { Canvas } from "@react-three/fiber";
-import Box from "../models/Box";
+import Playground from "../scenes/playground";
+import { useState } from "react";
+import { PerformanceMonitor } from "@react-three/drei";
+import { Perf } from "r3f-perf";
+// import Box from "../models/Box";
 
 const Home = () => {
+  // const plane = new PlaneGeometry(5, 5);
+  const [dpr, setDpr] = useState(1.5);
   return (
     <section className="w-screen h-screen">
-      <Canvas>
-        <ambientLight intensity={Math.PI / 2} />
-        <spotLight
-          position={[10, 10, 10]}
-          angle={0.15}
-          penumbra={1}
-          decay={0}
-          intensity={Math.PI}
+      <Canvas dpr={dpr}>
+        <Perf />
+        <PerformanceMonitor
+          onIncline={() => setDpr(2)}
+          onDecline={() => setDpr(1)}
         />
-        <pointLight position={[-10, -10, -10]} decay={0} intensity={Math.PI} />
-        <Box position={[-1.2, 0, 0]} />
-        <Box position={[1.2, 0, 0]} />
+        <Playground />
       </Canvas>
     </section>
   );
