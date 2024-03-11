@@ -1,5 +1,5 @@
 import { Route, BrowserRouter as Router, Routes } from "react-router-dom";
-import Home from "./pages/Home";
+import { Home, PlaygroundPage, EnvPGPage } from "./pages";
 
 function App() {
   return (
@@ -7,6 +7,8 @@ function App() {
       <Router>
         <Routes>
           <Route path="/" element={<Home />} />
+          <Route path="/playground" element={<PlaygroundPage />} />
+          <Route path="/enviroments" element={<EnvPGPage />} />
         </Routes>
       </Router>
     </main>

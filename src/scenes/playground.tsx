@@ -1,10 +1,7 @@
-import { CameraControls, MeshReflectorMaterial } from "@react-three/drei";
-import Box from "../models/Box";
-
 const Playground = () => {
   return (
     <>
-      <color attach="background" args={["#191920"]} />
+      {/* <color attach="background" args={["#191920"]} />
       <fog attach="fog" args={["#191920", 0, 15]} />
       <ambientLight intensity={Math.PI / 2} />
       <spotLight
@@ -15,13 +12,13 @@ const Playground = () => {
         intensity={Math.PI}
       />
       <CameraControls />
-      <pointLight position={[-10, -10, -10]} decay={0} intensity={Math.PI} />
-      {/* <Box position={[-1.2, 0, 0]} /> */}
-      {/* <Box position={[1.2, 0, 0]} /> */}
-      <group position={[0, 0, 0]}>
+      <pointLight position={[-10, -10, -10]} decay={0} intensity={Math.PI} /> */}
+
+      {/* <Box position={[1, 0, 0]} /> */}
+      {/* <group position={[0, 0, 0]}>
+
         <mesh position={[0, -1, 0]} rotation={[-Math.PI / 2, 0, 0]}>
           <planeGeometry args={[10, 10]} />
-          {/* <meshBasicMaterial attach="material" color={0x808080} /> */}
           <MeshReflectorMaterial
             mirror={0}
             blur={[300, 100]} // Blur ground reflections (width, height), 0 skips blur
@@ -37,9 +34,36 @@ const Playground = () => {
             reflectorOffset={0.2} // Offsets the virtual camera that projects the reflection. Useful when the reflective surface is some distance from the object's origin (default = 0)
           />
         </mesh>
-        <Box position={[1, 0, 0]} />
-        <Box position={[-1, 0, 0]} />
-      </group>
+        <group rotation-x={0.8} position={[0, 0.8, 0]}>
+          <group position={[0, 0, 0]}>
+            <mesh rotation={[Math.PI / 2, 0, 0]}>
+              <planeGeometry args={[5, 5]} />
+            </mesh>
+            <mesh rotation={[-Math.PI / 2, 0, 0]}>
+              <planeGeometry args={[5, 5]} />
+              <meshBasicMaterial color={0x808080} />
+            </mesh>
+            <mesh>
+              <Html
+                className="overflow-auto"
+                rotation-x={-Math.PI / 2}
+                position={[0, 0.05, 0]}
+                transform
+                occlude
+              >
+                <div
+                  className="h-40 w-40"
+                >
+                  <div className="bg-red-500 w-screen mx-auto">
+                    <p>test</p>
+                    <input type="text" />
+                  </div>
+                </div>
+              </Html>
+            </mesh>
+          </group>
+        </group>
+      </group> */}
     </>
   );
 };

@@ -1,23 +1,23 @@
-import { Canvas } from "@react-three/fiber";
-import { useState } from "react";
 import { PerformanceMonitor } from "@react-three/drei";
+import { Canvas } from "@react-three/fiber";
 import { Perf } from "r3f-perf";
-import { HomeScene } from "../scenes";
+import { useState } from "react";
+import Playground from "../scenes/playground";
 
-const Home = () => {
+const PlaygroundPage = () => {
   const [dpr, setDpr] = useState(1.5);
   return (
     <section className="w-screen h-screen">
-      <Canvas dpr={dpr}>
-        <Perf />
+      <Canvas dpr={dpr} shadows camera={{ position: [0, 0, 4.5], fov: 50 }}>
+        <Perf position="bottom-left" />
         <PerformanceMonitor
           onIncline={() => setDpr(2)}
           onDecline={() => setDpr(1)}
         />
-        <HomeScene />
+        <Playground />
       </Canvas>
     </section>
   );
 };
 
-export default Home;
+export default PlaygroundPage;
