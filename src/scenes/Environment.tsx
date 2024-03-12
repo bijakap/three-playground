@@ -12,8 +12,7 @@ const EnvironmentPlaygrounds = () => {
       <group position={[0, -0.65, 0]}>
         <Sphere />
         <AccumulativeShadows
-          temporal
-          frames={200}
+          frames={100}
           color="purple"
           colorBlend={0.5}
           opacity={1}
@@ -31,8 +30,8 @@ const EnvironmentPlaygrounds = () => {
       </group>
       <EnvComponent />
       <OrbitControls
-        // autoRotate
-        // autoRotateSpeed={4}
+        autoRotate
+        autoRotateSpeed={4}
         enablePan={false}
         enableZoom={false}
         minPolarAngle={Math.PI / 2.1}

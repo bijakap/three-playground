@@ -1,5 +1,5 @@
 import { Route, BrowserRouter as Router, Routes } from "react-router-dom";
-import { Home, PlaygroundPage, EnvPGPage } from "./pages";
+import { Home, PlaygroundPage, EnvPGPage, PhysicPage } from "./pages";
 
 function App() {
   return (
@@ -9,6 +9,7 @@ function App() {
           <Route path="/" element={<Home />} />
           <Route path="/playground" element={<PlaygroundPage />} />
           <Route path="/enviroments" element={<EnvPGPage />} />
+          <Route path="/physic" element={<PhysicPage />} />
         </Routes>
       </Router>
     </main>

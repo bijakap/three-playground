@@ -3,7 +3,7 @@ import {
   MeshReflectorMaterial,
   SpotLight,
 } from "@react-three/drei";
-import { Frame } from "../models";
+import { Box } from "../models";
 
 const HomeScene = () => {
   return (
@@ -20,7 +20,8 @@ const HomeScene = () => {
       />
       <CameraControls />
       <pointLight position={[-10, -10, -10]} decay={0} intensity={Math.PI} />
-      <Frame />
+      <Box position={[-1, 0, 0]} />
+      <Box position={[1, 0, 0]} />
 
       <mesh position={[0, -1, 0]} rotation={[-Math.PI / 2, 0, 0]}>
         <planeGeometry args={[10, 10]} />
